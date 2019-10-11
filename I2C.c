@@ -32,8 +32,8 @@ void TWI_Start(){
  * Send Address of receiver
  * */
 void TWI_Transmit_Add(unsigned char Add){
-  TWDR = Add;
-	TWCR = (1<<TWINT) |	(1<<TWEN);// Clear TWINT bit in TWCR to start transmission of address
+	TWDR = Add;
+	TWCR = (1<<TWINT) | (1<<TWEN);// Clear TWINT bit in TWCR to start transmission of address
 	//wait for TWINT Flag set
 	while (!(TWCR & (1<<TWINT)));// TWINT=1: Add transmitted and Ack/NAck received
 
@@ -46,7 +46,7 @@ void TWI_Transmit_Add(unsigned char Add){
 void TWI_Transmit_byte(unsigned char Data){
 	///uint8_t TWI_Transmit_byte(unsigned char Data){
 	TWDR = Data;
-	TWCR = (1<<TWINT) |	(1<<TWEN);// Clear TWINT bit in TWCR to	start transmission of data
+	TWCR = (1<<TWINT) | (1<<TWEN);// Clear TWINT bit in TWCR to	start transmission of data
 	//Wait for TWINT Flag set.
 	while (!(TWCR & (1<<TWINT)));// TWINT=1: DATA transmitted, and ACK/NACK received
 
@@ -55,6 +55,5 @@ void TWI_Transmit_byte(unsigned char Data){
 
 void TWI_Stop(){
 	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);// Transmit STOP condition
-    while(TWCR & (1<<TWSTO));////
-
+    while(TWCR & (1<<TWSTO));
 }

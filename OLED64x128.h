@@ -2,10 +2,10 @@
 #define	OLED64x128_H
 
 
-#define OLED_I2C_Add	0x78 //OR7a OR3D Or 3c??
-#define OLED_WIDTH		128
-#define OLED_HIGHTH		64
-#define OLED_pages		8
+#define OLED_I2C_Add	0x78 
+#define OLED_WIDTH	128
+#define OLED_HIGHTH	64
+#define OLED_pages	8
 #define OLED_BUFFERSIZE OLED_WIDTH*OLED_HIGHTH/8 //1024: number of total bytes (columns)
                                                 // each page:8rowx128column   
 #include <stdio.h>
@@ -28,8 +28,8 @@ char buffer[1024];//1024= 8page x 127column in each page(each column:8bits) = nu
 
 
 const unsigned char font_6x8 [][5] =
-{									 //    Decimal code
-	 { 0x00, 0x00, 0x00, 0x00, 0x00}, // sp 		32
+{			              //         Decimal code
+     { 0x00, 0x00, 0x00, 0x00, 0x00}, // sp	 	32
      { 0x00, 0x00, 0x2f, 0x00, 0x00}, // !		33
      { 0x00, 0x07, 0x00, 0x07, 0x00}, // "		34
      { 0x14, 0x7f, 0x14, 0x7f, 0x14}, // #		35

@@ -1,6 +1,4 @@
 #include "i2c.h"
-//#include <avr/io.h>// AVR IO file
-//#include <util/delay.h>// delay function header file
 
 /*
  * Initialize and Enable TWI(I2C)

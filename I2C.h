@@ -3,9 +3,9 @@
 
 /* TODO: setup i2c/TWI */
 //#define F_CPU	8000000UL// Define 8000000 freq. for delay function  
-#define F_I2C			100000UL// clock i2c
-#define PSC_I2C			1		// prescaler i2c
-#define SET_TWBR		(F_CPU/F_I2C-16UL)/(PSC_I2C*2UL)
+#define F_I2C   100000UL// clock i2c
+#define PSC_I2C   1		// prescaler i2c
+#define SET_TWBR  (F_CPU/F_I2C-16UL)/(PSC_I2C*2UL)
 
 #include <avr/io.h>// AVR IO file
 #include <util/delay.h>// delay function header file

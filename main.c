@@ -9,7 +9,7 @@
 #include "i2c.h"
 
  int main(){
-	 TWI_init(); //initiatei2c
+	TWI_init(); //initiatei2c
 	 OLED_init();
 	 clear_screen();
 	// DDRB = (1<< PB0);	//set PB0 direction as output
@@ -19,6 +19,6 @@
 	 txt_ptr = "    OLED is ready!";//equal to char txt_ptr[] = "abcdefghijklmnopqrstuv";
 	 write_text(5,txt_ptr);
 	 update_screen();
-	 
+
 	 return(0);
  }

@@ -2,12 +2,12 @@
 #include "i2c.h"
 
 void send_OLED_command(char cmnd){
-	TWI_Start();
-	// _delay_ms(1000);//?
-	TWI_Transmit_Add(OLED_I2C_Add);
-	TWI_Transmit_byte(0x00); // 0x00 for command, 0x40 for data
-	TWI_Transmit_byte(cmnd);
-	TWI_Stop();
+   TWI_Start();
+  // _delay_ms(1000);
+   TWI_Transmit_Add(OLED_I2C_Add);
+   TWI_Transmit_byte(0x00); // 0x00 for command, 0x40 for data
+   TWI_Transmit_byte(cmnd);
+   TWI_Stop();
  }
 
 void send_OLED_data(char data){
@@ -75,7 +75,6 @@ void update_screen() {
  * page of the current column(8 bits) pointed by the column address pointer are filled.
  * Data bit D0 is written into the top row, while data bit D7 is written into bottom row.
  * */
-
 void update_screen() {
   set_column_add();
   set_page_add();
